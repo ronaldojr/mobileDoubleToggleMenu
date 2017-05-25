@@ -1,59 +1,166 @@
-a.menu-link {
-  	    float: right;
-		    display: block;
-		    padding: 1em;
-		}
-		nav[role=navigation] {
-			clear: both;
-			-webkit-transition: all 0.3s ease-out;  
-			-moz-transition: all 0.3s ease-out;
-			-ms-transition: all 0.3s ease-out;
-			-o-transition: all 0.3s ease-out;
-			transition: all 0.3s ease-out;
-		}
-		.js nav[role=navigation] {
-			overflow: hidden;
-			max-height: 0;
-		}
-		nav[role=navigation].active {
-			max-height: 30em;
-		}
-		nav[role=navigation] ul {
-			margin: 0;
-			padding: 0;
-			border-top: 1px solid #808080;
-		}
-		nav[role=navigation] li a {
-			display: block;
-			padding: 0.8em;
-			border-bottom: 1px solid #808080;
-		}
+body {
+	background-color: #FFF;
+}
 
-		#submenu ul {
-			border-top: 0;
-		}
+#menu {
+	display: none;
+}
+
+.pattern {
+	position: fixed;
+	top: 0;
+	right: 0;
+	width: 100%;
+	height: 45px;
+	display: block;
+	border-bottom: 2px solid #000;
+	background-color: #FFF;
+}
+
+.conteudo {
+	clear: both;
+	margin-top: 50px;
+	z-index: -1;
+}
+
+
+
+nav[role=navigation] ul {
+	position: absolute;
+	right: 10px;
+}
+
+nav[role=navigation] ul li {
+	display: inline;
+	padding: 5px
+}
+
+nav[role=navigation] ul li a {
+	text-decoration: none;
+}
+
+
+@media screen 
+    and (min-width: 320px) 
+    and (max-width:  640px) {
+
+    #menu {
+    	display: block;
+    	position: absolute;
+    	top: 5px;
+    	right: 6px;
+		width: 30px;
+		height: 30px;
+		border-radius: 5px;
+		border: 2px solid #000;
+	}
+
+	#menu:hover {
+		cursor: pointer;
+	}
+
+	#menu span {
+		background-color: #000;
+		-webkit-transition: all 400ms ease-in-out;
+		        transition: all 400ms ease-in-out;
+	}
+
+	#menu span:nth-child(1) {
+		display: block;
+		position: relative;
+		border-radius: 6px;
+		border: 1px solid #000;
+		top: 7px;
+		left: 4px;
+		width: 65%;
+		height: 1px;
+	}
+
+	#menu span:nth-child(2) {
+		display: block;
+		position: relative;
+		border-radius: 6px;
+		border: 1px solid #000;
+		top: 10px;
+		left: 4px;
+		width: 65%;
+		height: 1px;
+	}
+
+	#menu span:nth-child(3) {
+		display: block;
+		position: relative;
+		border-radius: 6px;
+		border: 1px solid #000;
+		top: 13px;
+		left: 4px;
+		width: 65%;
+		height: 1px;
+	}
+
+
+	#menu span.active:nth-child(1) {
+		display: block;
+		position: relative;
+		top: 13px;
+		left: 4px;
+		-webkit-transform: rotate(45deg);
+      	    -ms-transform: rotate(45deg);
+                transform: rotate(45deg);
 		
-		@media screen and (min-width: 48.25em) {
-			#pattern {
-				display: none;
-			}
+	}
 
-			a.menu-link {
-			   display: none;
-			}
-			.js nav[role=navigation] {
-				max-height: none;
-			}
-			nav[role=navigation] ul {
-				margin: 0 0 0 -0.25em;
-				border: 0;
-			}
-			
-			nav[role=navigation]  li {
-				display: inline-block;
-				margin: 0 0.25em;
-			}
-			nav[role=navigation] li a {
-				border: 0;
-			}
-		}
+	#menu span.active:nth-child(2) {
+		display: none;
+		
+	}
+
+	#menu span.active:nth-child(3) {
+		display: block;
+		position: relative;
+		top: 11px;
+		left: 4px;
+		-webkit-transform: rotate(-45deg);
+      	    -ms-transform: rotate(-45deg);
+                transform: rotate(-45deg);
+	}
+	
+	nav[role=navigation] ul {
+		visibility: hidden;
+		position: relative;
+		opacity: 0;
+		left: 0;
+		top: 31px;
+		width: 100%;
+		padding-left: 0;
+		clear: both;
+		max-height: 0em;
+		background-color: #000;
+		-webkit-transition: all 250ms ease-in-out;  
+		-moz-transition: all 250ms ease-in-out;
+		-ms-transition: all 250ms ease-in-out;
+		-o-transition: all 250ms ease-in-out;
+		transition: all 250ms ease-in-out;
+	}
+
+	nav[role=navigation] ul.active {
+		visibility: visible;
+		opacity: 1;
+		max-height: 15em;
+	}
+
+	nav[role=navigation] ul li {
+		display: block;
+		position: relative;
+		width: 100%;
+		left: 0;
+		padding: 5px;
+		border-bottom: 1px solid #FFF;
+	}
+
+	nav[role=navigation] ul li a {
+		color: #FFF;
+	}
+
+
+}
