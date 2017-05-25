@@ -17,13 +17,20 @@ body {
 	background-color: #FFF;
 }
 
-.conteudo {
+#conteudo {
 	clear: both;
 	margin-top: 50px;
 	z-index: -1;
+	-webkit-transition: all 250ms ease-in-out;  
+	-moz-transition: all 250ms ease-in-out;
+	-ms-transition: all 250ms ease-in-out;
+	-o-transition: all 250ms ease-in-out;
+	transition: all 250ms ease-in-out;
 }
 
-
+#conteudo.conteudo_ativo{
+	margin-top: 200px;
+}
 
 nav[role=navigation] ul {
 	position: absolute;
